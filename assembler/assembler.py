@@ -120,7 +120,7 @@ def assemble(file: TextIOWrapper):
                         address = _get_symbol_table_value(token.text)
                         if not address:
                             raise AsmError(UNDEFINED_LABEL, token.pos, line)
-                        offset = address - len(binary_code)
+                        offset = address - org - len(binary_code)
                 else:
                     raise AsmError(OPERAND_EXPECTED, token.pos, line)
                 if -127 <= offset <= 127:
