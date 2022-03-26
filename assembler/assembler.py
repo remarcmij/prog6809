@@ -123,7 +123,7 @@ def assemble(file: TextIOWrapper):
                         offset = address - org - len(binary_code)
                 else:
                     raise AsmError(OPERAND_EXPECTED, token.pos, line)
-                if -127 <= offset <= 127:
+                if -128 <= offset <= 127:
                     binary_code.append(opcode.value)
                     binary_code.append(offset)
                 else:
