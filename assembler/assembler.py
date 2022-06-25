@@ -41,7 +41,7 @@ def assemble(file: TextIOWrapper):
     org = 0
     start = 0
     binary_code: list[int] = []
-    symbol_table = dict()
+    symbol_table = {}
     instruction_set = createInstructionSet()
 
     def _get_symbol_table_value(key):
